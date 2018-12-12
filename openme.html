@@ -1,0 +1,24 @@
+<head onload=setInterval("spin()",5)>
+    <base href="./">
+    <meta charset="utf-8" />
+    <title>Cool Mix Vol. 1</title>
+    <link rel="stylesheet" href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="function.js"></script>
+</head>
+
+<html>
+    <!-- Icons made by https://www.flaticon.com/authors/freepik" -->
+    <div class="container">
+        <div id=cassette>
+            <img id="left_spin" src="resources/spinny.png">
+            <img id="right_spin" src="resources/spinny.png">
+            <img src="resources/cassette.png">
+        </div>
+        <div id="controls">
+            <img id="back_button" class="control" src="resources/forward-button.png">
+            <img id="play" class="play_pause control" onclick="toggle_playstate()" src="resources/play.png">
+            <img id="pause" class="play_pause control" onclick="toggle_playstate()" src="resources/pause.png">
+            <img id="skip_button" class="control" src="resources/forward-button.png">
+        </div>
+    </div>
+</html>
