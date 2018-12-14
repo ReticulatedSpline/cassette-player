@@ -7,17 +7,20 @@
 </head>
 
 <html>
-    <!-- Icons made by https://www.flaticon.com/authors/freepik" -->
+    <div id="info" class="absolute_center">
+        <h1>test</h1>
+    </div>
     <div class="container">
         <div id=cassette>
             <img id="left_spin" src="resources/spinny.png">
             <img id="right_spin" src="resources/spinny.png">
             <img src="resources/cassette.png">
         </div>
+        <!-- Icons made by https://www.flaticon.com/authors/freepik" -->
         <div id="controls">
-            <img id="back_button" class="control" src="resources/forward-button.png">
-            <img id="play" class="play_pause control" onclick="toggle_playstate()" src="resources/play.png">
-            <img id="pause" class="play_pause control" onclick="toggle_playstate()" src="resources/pause.png">
+            <img id="back_button" class="control" onclick="skip_back(this.id)" src="resources/forward-button.png">
+            <img id="play" class="play_pause control" onclick="toggle_playstate(this.id)" src="resources/play.png">
+            <img id="pause" class="play_pause control" onclick="toggle_playstate(this.id)" src="resources/pause.png">
             <img id="skip_button" class="control" src="resources/forward-button.png">
         </div>
     </div>
