@@ -3,14 +3,15 @@
     <meta charset="utf-8" />
     <title>Cool Mix Vol. 1</title>
     <link rel="stylesheet" href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="manifest.js"></script>
     <script type="text/javascript" src="function.js"></script>
 </head>
 
 <html>
-    <div id="info" class="absolute_center">
-        <h1>test</h1>
-    </div>
     <div class="container">
+        <div id="info">
+            <marquee id='text' scrollamount="3">press play to jam</marquee>
+        </div>
         <div id=cassette>
             <img id="left_spin" src="resources/spinny.png">
             <img id="right_spin" src="resources/spinny.png">
@@ -19,9 +20,9 @@
         <!-- Icons made by https://www.flaticon.com/authors/freepik" -->
         <div id="controls">
             <img id="back_button" class="control" onclick="skip_back(this.id)" src="resources/forward-button.png">
-            <img id="play" class="play_pause control" onclick="toggle_playstate(this.id)" src="resources/play.png">
-            <img id="pause" class="play_pause control" onclick="toggle_playstate(this.id)" src="resources/pause.png">
-            <img id="skip_button" class="control" src="resources/forward-button.png">
+            <img id="play" class="play_pause control" onclick="toggle_playstate()" src="resources/play.png">
+            <img id="pause" class="play_pause control" onclick="toggle_playstate()" src="resources/pause.png">
+            <img id="skip_button" class="control" onclick="skip_forward(this.id)" src="resources/forward-button.png">
         </div>
     </div>
 </html>
