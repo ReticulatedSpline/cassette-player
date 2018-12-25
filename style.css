@@ -3,10 +3,10 @@
 body {
     background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
     background-size: 1800% 1800%;
-    -webkit-animation: rainbow 18s ease infinite;
-    -z-animation: rainbow 30s ease infinite;
-    -o-animation: rainbow 30s ease infinite;
     animation: rainbow 30s ease infinite;
+    -webkit-    animation: rainbow 18s ease infinite;
+    -z-         animation: rainbow 30s ease infinite;
+    -o-         animation: rainbow 30s ease infinite;
 }
 
 @font-face {
@@ -62,27 +62,46 @@ body {
 
 .mirror_hor {
     transform: rotate(-180deg);
+    -ms-        transform: rotate(-180deg);
+    -webkit-    transform: rotate(-180deg);
+    -moz-       transform: rotate(-180deg);
+    -o-         transform: rotate(-180deg);
 }
 
 .play_pause {
     transform: scale(.85);
+    -ms-        transform: scale(.85);
+    -webkit-    transform: scale(.85);
+    -moz-       transform: scale(.85);
+    -o-         transform: scale(.85);
 }
 
 #back_button {
+    -webkit- transform: scale(50px, 50px);
+    height: 50px;
+    width: 50px;
     transform: rotateY(180deg);
+    -ms-        transform: rotateY(180deg);
+    -webkit-    transform: rotateY(180deg);
+    -moz-       transform: rotateY(180deg);
+    -o-         transform: rotateY(180deg);
 }
 
 #cassette {
     z-index: 2;
     align-self: center;
-    transform:scale(0.5);
+    transform: scale(0.5);
+    -ms-        transform: scale(0.5);
+    -webkit-    transform: scale(0.5);
+    -moz-       transform: scale(0.5);
+    -o-         transform: scale(0.5);
 }
 
 #controls {
     display: flex;
+    flex-shrink: 0;
     margin: auto;
     margin-top: -100px;
-    width: 150px;
 }
 
 #info {
@@ -101,7 +120,15 @@ body {
     margin-left:29.3%;
 }
 
+#play {
+    height: 50px;
+    width: 70px;
+}
+
 #pause {
+    -webkit- transform: scale(50px, 70px);
+    height: 50px;
+    width: 70px;
     display: none;
 }
 
@@ -111,6 +138,12 @@ body {
     opacity: 0.6;
     margin-top:23.7%;
     margin-left:60.5%;
+}
+
+#skip_button {
+    -webkit- transform: scale(50px, 70px);
+    height: 50px;
+    width: 50px;
 }
 
 #text {

@@ -1,22 +1,24 @@
 /* background gradient code from https://codepen.io/quasimondo/pen/lDdrF */
 
 var sound;
-var playing;
+var playing = false;
 var degree;
 var song_idx;
 var songpath;
+var marquee;
 
+var song_max    = 75;
 var scripts     = document.getElementsByTagName('script');
 var raw_path    = scripts[scripts.length-1].src.split('?')[0];
 var mydir_enc   = raw_path.split('/').slice(0, -1).join('/');
 var path        = mydir_enc.replace(/%20/g, ' ') + '/';
 var sound       = new Audio();
-sound.addEventListener('ended', skip_forward());
+sound.addEventListener('ended', skip_forward);
 
 window.onload = function() {
-    playing = false;
     song_idx = 0;
     degree = 0;
+    sound.src=("file://" + song_files[song_idx])
     setInterval(spin, 5);
     return;
 }
@@ -38,6 +40,9 @@ function spin() {
 }
 
 function toggle_playstate() {
+    console.log("Toggling playstate...")
+    marquee = document.getElementById("text");
+    marquee.innerHTML = song_artists[song_idx] + " :: " + song_titles[song_idx]
     if (playing) {
         sound.pause();
         document.getElementById("play").style.display = "block"
@@ -54,23 +59,23 @@ function toggle_playstate() {
     return;
 }
 
-function skip_forward(id) {
-    ui_pop(id)
-    console.log("Skipping forward...")
-    song_idx++;
+function skip_forward() {
+    song_idx < song_max ? song_idx++ : song_idx = 0;
+    console.log("Skipping forward to song " + song_idx);
     sound.src = "file://" + song_files[song_idx];
-    let marquee = document.getElementById("text");
+    marquee = document.getElementById("text");
     marquee.innerHTML = song_artists[song_idx] + " :: " + song_titles[song_idx]
-    if (!playing) toggle_playstate()
+    sound.play();
+    if (!playing) toggle_playstate();
 }
 
-function skip_back(id) {
-    ui_pop(id);
-    console.log("Skipping back...")
-    song_idx--;
+function skip_back() {
+    song_idx > 0 ? song_idx-- : song_idx = song_max;
+    console.log("Skipping back to song " + song_idx);
     sound.src = "file://" + song_files[song_idx];
-    let marquee = document.getElementById("text");
+    marquee = document.getElementById("text");
     marquee.innerHTML = song_artists[song_idx] + " :: " + song_titles[song_idx]
+    sound.play();
     if (!playing) toggle_playstate()
 }
 
